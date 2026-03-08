@@ -6,18 +6,13 @@
 /*   By: fbenini- <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 23:07:20 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/03/07 23:38:04 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:15:34 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 #include <string>
-
-Zombie::Zombie(void)
-{
-	return ;
-}
 
 Zombie::Zombie(std::string name)
 {

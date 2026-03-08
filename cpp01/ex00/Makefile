@@ -6,17 +6,17 @@
 #    By: fbenini- <your@mail.com>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/07 20:07:02 by fbenini-          #+#    #+#              #
-#    Updated: 2026/03/07 23:28:02 by fbenini-         ###   ########.fr        #
+#    Updated: 2026/03/07 23:14:38 by fbenini-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = "ZombieHorde"
+NAME = BraiiiiiiinnnzzzZ
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

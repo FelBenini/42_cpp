@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/07 23:07:20 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/03/07 23:38:04 by fbenini-         ###   ########.fr       */
+/*   Created: 2026/03/07 23:09:14 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/03/07 23:17:33 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
-#include <string>
 
-Zombie::Zombie(void)
+int	main(void)
 {
-	return ;
-}
+	Zombie	*zombie;
 
-Zombie::Zombie(std::string name)
-{
-	this->_name = name;
-}
-
-Zombie::~Zombie(void)
-{
-	std::cout
-		<< this->_name
-		<< " destroyed."
-		<< std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	zombie = newZombie("Zumbizinho");
+	zombie->announce();
+	delete zombie;
+	randomChump("Fulaninho");
+	return (0);
 }

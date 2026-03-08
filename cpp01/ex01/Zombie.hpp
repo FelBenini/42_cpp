@@ -6,7 +6,7 @@
 /*   By: fbenini- <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 23:05:34 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/03/07 23:07:12 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:37:11 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class	Zombie
 
 	public:
 		Zombie(std::string name);
+		Zombie();
 		~Zombie(void);
 		void	announce(void);
 };
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
