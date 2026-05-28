@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <iostream>
 #include <ostream>
 #include <string>
-#include <algorithm>
 
 int	main(int argc, char *argv[])
 {
@@ -24,7 +24,9 @@ int	main(int argc, char *argv[])
 	}
 	for (int i = 1; i < argc; i++) {
 		std::string str = argv[i];
-		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+    for (std::string::size_type i = 0; i < str.length(); ++i) {
+        str[i] = (char)std::toupper((unsigned char)str[i]);
+    }
 		std::cout << str;
 		if (i < argc - 1)
 			std::cout << " ";

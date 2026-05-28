@@ -44,14 +44,17 @@ void Phonebook::search_information(void)
 	std::cout << std::setw(10) << "index" << "|"
 				<< std::setw(10) << "first name" << "|"
 				<< std::setw(10) << "last name" << "|"
-				<< std::setw(10) << "nickname" << std::endl;
+				<< std::setw(10) << "nickname" << "|"
+				<< std::setw(10) << "secret" << "|"
+				<< std::endl;
 
 	for (int i = 0; i < _qty; i++)
 	{
 		std::cout << std::setw(10) << _contacts[i].get_index() + 1 << "|"
 				<< std::setw(10) << format_field(_contacts[i].get_firstname()) << "|"
 				<< std::setw(10) << format_field(_contacts[i].get_surname()) << "|"
-				<< std::setw(10) << format_field(_contacts[i].get_nickname())
+				<< std::setw(10) << format_field(_contacts[i].get_nickname()) << "|"
+				<< std::setw(10) << format_field(_contacts[i].get_secret()) << "|"
 				<< std::endl;
 	}
 }
@@ -61,6 +64,7 @@ void	Phonebook::insert_contact(void)
 	std::string	firstname;
 	std::string	surname;
 	std::string	nickname;
+	std::string	secret;
 
 	std::cout << "First name: ";
 	std::getline(std::cin, firstname);
@@ -68,8 +72,10 @@ void	Phonebook::insert_contact(void)
 	std::getline(std::cin, surname);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickname);
+	std::cout << "Darkest secret: ";
+		std::getline(std::cin, secret);
 
-	_contacts[_index].set_contact(_index, firstname, surname, nickname);
+	_contacts[_index].set_contact(_index, firstname, surname, nickname, secret);
 	_index = (_index + 1) % 8;
 	if (_qty < 8)
 		_qty++;

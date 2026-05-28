@@ -22,15 +22,17 @@ class	Contact
 		std::string	_firstname;
 		std::string	_surname;
 		std::string	_nickname;
+		std::string	_secret;
 
 	public:
 		Contact(void);
 		void		set_contact(int index, std::string firstname, std::string surname,
-									std::string _nickname);
+									std::string nickname, std::string secret);
 		int			get_index(void);
 		std::string	get_firstname(void);
 		std::string	get_surname(void);
 		std::string	get_nickname(void);
+		std::string get_secret(void);
 };
 
 #endif

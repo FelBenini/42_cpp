@@ -18,16 +18,18 @@ Contact::Contact(void)
 	this->_firstname = std::string();
 	this->_surname = std::string();
 	this->_nickname = std::string();
+	this->_secret = std::string();
 	return ;
 }
 
 void	Contact::set_contact(int index, std::string firstname, std::string surname,
-		std::string nickname)
+		std::string nickname, std::string secret)
 {
     this->_index = index;
     this->_firstname = firstname;
     this->_surname = surname;
     this->_nickname = nickname;
+	this->_secret = secret;
 }
 
 int	Contact::get_index(void)
@@ -48,4 +50,9 @@ std::string	Contact::get_surname(void)
 std::string	Contact::get_nickname(void)
 {
 	return (this->_nickname);
+}
+
+std::string	Contact::get_secret(void)
+{
+	return (this->_secret);
 }
