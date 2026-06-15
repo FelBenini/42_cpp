@@ -24,6 +24,7 @@ class	Zombie
 		Zombie();
 		~Zombie(void);
 		void	announce(void);
+		void	setName(std::string name);
 };
 
 Zombie	*zombieHorde(int N, std::string name);
