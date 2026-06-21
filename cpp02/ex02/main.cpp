@@ -37,11 +37,21 @@ int	main(void)
 	std::cout << "9.5f >= 9.5f: " << (Fixed(9.5f) >= Fixed(9.5f)) << std::endl;
 	std::cout << "3.1 > 2.4: " << (Fixed(3.1f) > Fixed(2.4f)) << std::endl;
 	std::cout << "9.5f > 9.5f: " << (Fixed(9.5f) > Fixed(9.5f)) << std::endl;
-	// std::cout << ++a << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << a++ << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << std::endl << "Incrmenetal and decremental operators: " << std::endl;
+	std::cout << "++a: " << ++a << std::endl;
+	std::cout << "a: "<< a << std::endl;
+	std::cout << "a++: " << a++ << std::endl;
+	std::cout << "a: "<< a << std::endl;
+	std::cout << "--a: " << --a << std::endl;
+	std::cout << "a: "<< a << std::endl;
+	std::cout << "a--: " << a-- << std::endl;
+	std::cout << "a: "<< a << std::endl;
+
+	Fixed const min(3.02f);
+	Fixed const max(4.8f);
+	std::cout << std::endl << "min and max: " << std::endl;
+	std::cout << "Min between 3.02 and 4.8: " << Fixed::min(min, max) << std::endl;
+	std::cout << "Max between 3.02 and 4.8: " << Fixed::max(min, max) << std::endl;
 	return (0);
 }

@@ -73,6 +73,7 @@ std::ostream &operator<<(std::ostream &stream, Fixed const &input)
 Fixed	Fixed::operator+(const Fixed &other) const
 {
     Fixed	result;
+
     result.setRawBits(this->getRawBits() + other.getRawBits());
     return	result;
 }
@@ -80,8 +81,9 @@ Fixed	Fixed::operator+(const Fixed &other) const
 Fixed	Fixed::operator-(const Fixed &other) const
 {
     Fixed	result;
+
     result.setRawBits(this->getRawBits() - other.getRawBits());
-    return	result;
+    return result;
 }
 
 
@@ -138,4 +140,52 @@ bool	Fixed::operator>(const Fixed &other) const
 bool	Fixed::operator!=(const Fixed &other) const
 {
 	return (this->_value != other._value);
+}
+
+Fixed	Fixed::operator++(void)
+{
+	++(this->_value);
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp(*this);
+
+	++(this->_value);
+	return (tmp);
+}
+
+Fixed	Fixed::operator--(void)
+{
+	--(this->_value);
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp(*this);
+
+	--(this->_value);
+	return (tmp);
+}
+
+Fixed&	Fixed::min(Fixed& num1, Fixed& num2)
+{
+	return (num1 < num2 ? num1 : num2);
+}
+
+Fixed&	Fixed::max(Fixed& num1, Fixed& num2)
+{
+	return (num1 > num2 ? num1 : num2);
+}
+
+const Fixed&	Fixed::min(const Fixed& num1, const Fixed& num2)
+{
+	return (num1 < num2 ? num1 : num2);
+}
+
+const Fixed&	Fixed::max(const Fixed& num1, const Fixed& num2)
+{
+	return (num1 > num2 ? num1 : num2);
 }
