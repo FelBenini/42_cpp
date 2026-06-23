@@ -16,6 +16,7 @@
 #include <ostream>
 #include <cstdlib>
 #include <string>
+#include <sstream>
 
 Phonebook::Phonebook(void)
 {
@@ -62,8 +63,14 @@ void Phonebook::search_information(void)
 				<< std::setw(10) << format_field(_contacts[i].get_nickname()) << "|"
 				<< std::endl;
 	}
+	std::cout << "Insert index: ";
 	std::getline(std::cin, index);
-	int_index = std::atoi(index.c_str());
+	std::stringstream ss(index);
+	if (!(ss >> int_index) || !(ss.eof()))
+	{
+		std::cout << "Invalid index." << std::endl;
+		return;
+	}
 	if (int_index < 0 || int_index >= _qty)
 	{
 		std::cout << "Invalid index." << std::endl;
