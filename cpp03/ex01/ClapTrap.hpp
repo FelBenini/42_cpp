@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/23 18:01:54 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/06/25 20:57:27 by fbenini-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+# include <string>
+
+class ClapTrap
+{
+	protected:
+		std::string		name;
+		unsigned int	hitPoints;
+		unsigned int	energyPoints;
+		unsigned int	attackDamage;
+	public:
+		ClapTrap();
+		ClapTrap(const std::string &name);
+		ClapTrap(const ClapTrap &other);
+		ClapTrap &operator=(const ClapTrap &other);
+		~ClapTrap();
+
+		void			attack(const std::string &target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		std::string		getName(void);
+		unsigned int	getHitPoints(void);
+		unsigned int	getEnergyPoints(void);
+		unsigned int	getAttackDamage(void);
+};
+
+#endif
