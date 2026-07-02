@@ -28,6 +28,14 @@ class ClapTrap
 		ClapTrap(const ClapTrap &other);
 		ClapTrap &operator=(const ClapTrap &other);
 		~ClapTrap();
+
+		void			attack(const std::string &target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		std::string		getName(void);
+		unsigned int	getHitPoints(void);
+		unsigned int	getEnergyPoints(void);
+		unsigned int	getAttackDamage(void);
 };
 
 #endif

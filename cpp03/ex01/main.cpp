@@ -11,9 +11,24 @@
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include <iostream>
 
 int	main(void)
 {
+	std::cout << "========================== TESTING CLAVTRAP ==========================" << std::endl;
+	ClapTrap	john("john");
+	ClapTrap	jane("jane");
+	john.attack("paul");
+	jane.attack("john");
+	john.takeDamage(5);
+	john.beRepaired(7);
+	john.takeDamage(5);
+	jane.takeDamage(5);
+	john.takeDamage(5);
+	jane.beRepaired(3);
+	jane.takeDamage(8);
+
+	std::cout << "========================== TESTING SCAVTRAP ==========================" << std::endl;
 	ScavTrap	bob("bob");
 	ScavTrap	tom("tom");
 	bob.attack("paul");
