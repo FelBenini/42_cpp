@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:01:52 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/06/23 18:02:03 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/07/02 17:27:51 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->hitPoints += amount;
-	std::cout << this->name << " repaired itself "<< amount << " ties, and now has " << this->hitPoints << " hit points" << std::endl;
+	std::cout << this->name << " repaired itself "<< amount << " times, and now has " << this->hitPoints << " hit points" << std::endl;
 }
 
 std::string	ClapTrap::getName(void)

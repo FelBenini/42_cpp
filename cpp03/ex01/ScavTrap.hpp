@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 20:47:50 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/06/25 20:51:35 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/07/02 17:23:51 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ScavTrap: public ClapTrap
 		ScavTrap(const std::string &name);
 		ScavTrap(const ScavTrap &other);
 		ScavTrap &operator=(const ScavTrap &other);
-		~ScavTrap();
+		virtual	~ScavTrap();
 		void	guardGate(void);
 };
 
