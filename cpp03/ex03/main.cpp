@@ -6,10 +6,11 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:01:19 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/07/02 17:28:44 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/07/03 15:25:55 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "DiamondTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <iostream>
@@ -58,5 +59,22 @@ int	main(void)
 	mary.beRepaired(3);
 	paul.takeDamage(8);
 	mary.highFivesGuys();
+
+	std::cout << "========================== TESTING DIAMONDTRAP ==========================" << std::endl;
+	DiamondTrap	james("james");
+	DiamondTrap	sarah("sarah");
+	james.whoAmI();
+	sarah.whoAmI();
+	james.attack("sarah");
+	sarah.attack("james");
+	james.takeDamage(30);
+	james.beRepaired(15);
+	james.takeDamage(30);
+	sarah.takeDamage(20);
+	james.takeDamage(30);
+	sarah.beRepaired(10);
+	sarah.takeDamage(50);
+	james.guardGate();
+	sarah.highFivesGuys();
 	return (0);
 }

@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	std::cout << "========================== TESTING CLAVTRAP ==========================" << std::endl;
+	std::cout << "========================== TESTING CLAPTRAP ==========================" << std::endl;
 	ClapTrap	john("john");
 	ClapTrap	jane("jane");
 	john.attack("paul");
