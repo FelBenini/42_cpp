@@ -54,18 +54,24 @@ int main(int argc, char **argv)
 	std::ifstream	in_file;
 	std::ofstream	out_file;
 
-	in = argv[1];
-	out = in + ".replace";
 	if (argc != 4)
 	{
 		std::cerr << "./replace file_name <search> <replace>" << std::endl;
 		return (0);
 	}
+	in = argv[1];
+	out = in + ".replace";
 	in_file.open(in.c_str(), std::fstream::in);
-	out_file.open(out.c_str(), std::fstream::out);
-	if (!in_file || !out_file)
+	if (!in_file)
 	{
-		std::cerr << "Could not open/create the files." << std::endl;
+		std::cerr << "Could not open the input file." << std::endl;
+		in_file.close();
+		return (1);
+	}
+	out_file.open(out.c_str(), std::fstream::out);
+	if (!out_file)
+	{
+		std::cerr << "Could not create the output file." << std::endl;
 		in_file.close();
 		out_file.close();
 		return (1);
