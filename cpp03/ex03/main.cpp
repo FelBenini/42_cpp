@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:01:19 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/07/03 15:25:55 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/07/03 16:55:59 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	main(void)
 {
 	std::cout << "========================== TESTING CLAPTRAP ==========================" << std::endl;
 	ClapTrap	john("john");
+	ClapTrap	clone(john);
 	ClapTrap	jane("jane");
+	ClapTrap	clone2 = jane;
 	john.attack("paul");
 	jane.attack("john");
 	john.takeDamage(5);
@@ -32,7 +34,9 @@ int	main(void)
 
 	std::cout << "========================== TESTING SCAVTRAP ==========================" << std::endl;
 	ScavTrap	bob("bob");
+	ScavTrap	bob_clone(bob);
 	ScavTrap	tom("tom");
+	ScavTrap	tom_clone = tom;
 	bob.attack("paul");
 	tom.attack("bob");
 	bob.takeDamage(5);
@@ -47,7 +51,9 @@ int	main(void)
 
 	std::cout << "========================== TESTING FRAGTRAP ==========================" << std::endl;
 	FragTrap	paul("paul");
+	FragTrap	paul_clone(paul);
 	FragTrap	mary("mary");
+	FragTrap	may_clone = mary;
 	paul.attack("bob");
 	mary.attack("tom");
 	mary.takeDamage(5);
@@ -62,7 +68,9 @@ int	main(void)
 
 	std::cout << "========================== TESTING DIAMONDTRAP ==========================" << std::endl;
 	DiamondTrap	james("james");
+	DiamondTrap	james_clone(james);
 	DiamondTrap	sarah("sarah");
+	DiamondTrap	sarah_clone(sarah);
 	james.whoAmI();
 	sarah.whoAmI();
 	james.attack("sarah");

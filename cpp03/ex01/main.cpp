@@ -6,10 +6,11 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:01:19 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/06/25 20:49:11 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/07/03 16:54:33 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include <iostream>
 
@@ -17,7 +18,9 @@ int	main(void)
 {
 	std::cout << "========================== TESTING CLAPTRAP ==========================" << std::endl;
 	ClapTrap	john("john");
+	ClapTrap	clone(john);
 	ClapTrap	jane("jane");
+	ClapTrap	clone2 = jane;
 	john.attack("paul");
 	jane.attack("john");
 	john.takeDamage(5);
@@ -30,7 +33,9 @@ int	main(void)
 
 	std::cout << "========================== TESTING SCAVTRAP ==========================" << std::endl;
 	ScavTrap	bob("bob");
+	ScavTrap	bob_clone(bob);
 	ScavTrap	tom("tom");
+	ScavTrap	tom_clone = tom;
 	bob.attack("paul");
 	tom.attack("bob");
 	bob.takeDamage(5);
