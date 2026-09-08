@@ -1,45 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.cpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 17:15:11 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/03 18:15:22 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:16:30 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongDog.hpp"
-#include "WrongAnimal.hpp"
+#include "Dog.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
-WrongDog::WrongDog(): WrongAnimal()
+Dog::Dog(): Animal()
 {
-	std::cout << "WrongDog constructor called" << std::endl;
-	this->type = "wrong dog";
+	std::cout << "Dog constructor called" << std::endl;
+	this->type = "dog";
+	this->brain = new Brain(this->type);
 }
 
-WrongDog	&WrongDog::operator=(const WrongDog &other)
+Dog	&Dog::operator=(const Dog &other)
 {
-	std::cout << "WrongDog copy assignment operator called" << std::endl;
+	std::cout << "Dog copy assignment operator called" << std::endl;
 	if (this != &other)
+	{
 		this->type = other.type;
+		delete this->brain;
+		this->brain = new Brain(this->type);
+	}
 	return (*this);
 }
 
-WrongDog::WrongDog(const WrongDog &other)
+Dog::Dog(const Dog &other)
 {
-	std::cout << "WrongDog copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 }
 
-WrongDog::~WrongDog()
+Dog::~Dog()
 {
-	std::cout << "WrongDog class destructor called" << std::endl;
+	delete this->brain;
+	std::cout << "Dog class destructor called" << std::endl;
 }
 
-void	WrongDog::makeSound() const
+void	Dog::makeSound() const
 {
 	std::cout << "Woof" << std::endl;
+}
+
+Brain	*Dog::getBrain() const
+{
+	return this->brain;
 }

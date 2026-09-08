@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 17:15:11 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/03 18:15:22 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:17:19 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongDog::WrongDog(): WrongAnimal()
 
 WrongDog	&WrongDog::operator=(const WrongDog &other)
 {
-	std::cout << "WrongDog copy assignment operator called" << std::endl;
+	std::cout << "WWrongDog copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return (*this);
@@ -30,7 +30,7 @@ WrongDog	&WrongDog::operator=(const WrongDog &other)
 
 WrongDog::WrongDog(const WrongDog &other)
 {
-	std::cout << "WrongDog copy constructor called" << std::endl;
+	std::cout << "rongDog copy constructor called" << std::endl;
 	this->type = other.type;
 }
 

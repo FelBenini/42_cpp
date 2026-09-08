@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.cpp                                       :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 17:15:11 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/03 18:15:22 by fbenini-         ###   ########.fr       */
+/*   Created: 2026/08/24 17:12:50 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/09/03 18:17:07 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongDog.hpp"
+#include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongDog::WrongDog(): WrongAnimal()
+WrongCat::WrongCat(): WrongAnimal()
 {
-	std::cout << "WrongDog constructor called" << std::endl;
-	this->type = "wrong dog";
+	std::cout << "WrongCat constructor called" << std::endl;
+	this->type = "wrong cat";
 }
 
-WrongDog	&WrongDog::operator=(const WrongDog &other)
+WrongCat	&WrongCat::operator=(const WrongCat &other)
 {
-	std::cout << "WrongDog copy assignment operator called" << std::endl;
+	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return (*this);
 }
 
-WrongDog::WrongDog(const WrongDog &other)
+WrongCat::WrongCat(const WrongCat &other)
 {
-	std::cout << "WrongDog copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 	this->type = other.type;
 }
 
-WrongDog::~WrongDog()
+WrongCat::~WrongCat()
 {
-	std::cout << "WrongDog class destructor called" << std::endl;
+	std::cout << "WrongCat class destructor called" << std::endl;
 }
 
-void	WrongDog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "Woof" << std::endl;
+	std::cout << "Meoww" << std::endl;
 }
