@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 19:03:40 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/09 16:20:01 by fbenini-         ###   ########.fr       */
+/*   Created: 2026/09/09 18:47:18 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/09/09 18:47:25 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-AMateria::AMateria(std::string const &type): type(type)
+IMateriaSource::IMateriaSource(void)
 {
 }
 
-AMateria::AMateria(AMateria const &copy)
+IMateriaSource::IMateriaSource(IMateriaSource const &copy)
 {
 	*this = copy;
 }
 
-AMateria::~AMateria(void)
+IMateriaSource const	&IMateriaSource::operator=(IMateriaSource const &copy)
 {
-}
-
-AMateria const	&AMateria::operator=(AMateria const &copy)
-{
-	this->type = copy.type;
+	(void)copy;
 	return (*this);
-}
-
-std::string const	&AMateria::getType(void) const
-{
-	return (this->type);
 }

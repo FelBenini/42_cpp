@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 19:03:40 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/09 16:20:01 by fbenini-         ###   ########.fr       */
+/*   Created: 2026/09/09 18:38:10 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/09/09 18:39:25 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-AMateria::AMateria(std::string const &type): type(type)
+ICharacter::ICharacter(void)
 {
 }
 
-AMateria::AMateria(AMateria const &copy)
+ICharacter::ICharacter(ICharacter const &other)
 {
-	*this = copy;
+	*this = other;
 }
 
-AMateria::~AMateria(void)
+ICharacter const &ICharacter::operator=(ICharacter const &other)
 {
-}
-
-AMateria const	&AMateria::operator=(AMateria const &copy)
-{
-	this->type = copy.type;
+	(void)other;
 	return (*this);
-}
-
-std::string const	&AMateria::getType(void) const
-{
-	return (this->type);
 }

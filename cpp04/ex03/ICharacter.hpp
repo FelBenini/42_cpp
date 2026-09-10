@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 15:52:49 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/08 15:53:47 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/09/09 18:37:52 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 class ICharacter
 {
+	protected:
+		ICharacter(void);
+		ICharacter(ICharacter const &other);
+		ICharacter const	&operator=(ICharacter const &other);
+
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;

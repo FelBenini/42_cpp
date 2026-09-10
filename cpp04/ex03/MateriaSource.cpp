@@ -6,7 +6,7 @@
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 19:02:44 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/08 19:11:42 by fbenini-         ###   ########.fr       */
+/*   Updated: 2026/09/09 19:29:15 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 MateriaSource::MateriaSource(void): inventory()
 {
-	std::cout << "MateriaSource default constructor called" << std::endl;
 }
 
 MateriaSource::~MateriaSource(void)
@@ -25,23 +24,32 @@ MateriaSource::~MateriaSource(void)
 		if (this->inventory[i])
 			delete this->inventory[i];
 	}
-	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &copy): IMateriaSource(copy), inventory()
+MateriaSource::MateriaSource(MateriaSource const &copy)
+    : IMateriaSource(copy), inventory()
 {
-	for (int i = 0; i < 4; i++)
-	{
-		if (copy.inventory[i])
-			this->inventory[i] = copy.inventory[i];
-	}
-	std::cout << "MateriaSource copy constructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        if (copy.inventory[i])
+            this->inventory[i] = copy.inventory[i]->clone();
+    }
 }
 
-MateriaSource const	&MateriaSource::operator=(const MateriaSource &copy)
+MateriaSource const &MateriaSource::operator=(const MateriaSource &copy)
 {
-	(void)copy;
-	return (*this);
+    if (this != &copy)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            delete this->inventory[i];
+            this->inventory[i] = NULL;
+
+            if (copy.inventory[i])
+                this->inventory[i] = copy.inventory[i]->clone();
+        }
+    }
+    return (*this);
 }
 
 void	MateriaSource::learnMateria(AMateria *materia)
@@ -51,7 +59,6 @@ void	MateriaSource::learnMateria(AMateria *materia)
 		if (materia && this->inventory[i] == NULL)
 		{
 			this->inventory[i] = materia;
-			std::cout << "Materia " << this->inventory[i]->getType() << " learned at index " << i << std::endl;
 			return ;
 		}
 	}

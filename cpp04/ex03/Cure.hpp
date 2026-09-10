@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 19:03:40 by fbenini-          #+#    #+#             */
-/*   Updated: 2026/09/09 16:20:01 by fbenini-         ###   ########.fr       */
+/*   Created: 2026/09/09 18:32:17 by fbenini-          #+#    #+#             */
+/*   Updated: 2026/09/09 18:34:16 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
 
-AMateria::AMateria(std::string const &type): type(type)
-{
-}
+# include "AMateria.hpp"
 
-AMateria::AMateria(AMateria const &copy)
+class Cure: public AMateria
 {
-	*this = copy;
-}
+	public:
+		Cure(void);
+		Cure(Cure const &other);
+		~Cure(void);
+		Cure const	&operator=(Cure const &other);
 
-AMateria::~AMateria(void)
-{
-}
+		virtual AMateria	*clone(void) const;
+		void				use(ICharacter &target);
+};
 
-AMateria const	&AMateria::operator=(AMateria const &copy)
-{
-	this->type = copy.type;
-	return (*this);
-}
-
-std::string const	&AMateria::getType(void) const
-{
-	return (this->type);
-}
+#endif

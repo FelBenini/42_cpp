@@ -6,7 +6,7 @@
 #    By: fbenini- <fbenini-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/08 15:49:33 by fbenini-          #+#    #+#              #
-#    Updated: 2026/09/08 18:41:23 by fbenini-         ###   ########.fr        #
+#    Updated: 2026/09/09 18:47:08 by fbenini-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp MateriaSource.cpp
+SRC = main.cpp IMateriaSource.cpp MateriaSource.cpp Character.cpp ICharacter.cpp AMateria.cpp Ice.cpp Cure.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
